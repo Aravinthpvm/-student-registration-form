@@ -29,7 +29,7 @@
                  </div>
                  <div class="form-group">
                      <label for="phone">Phone Number</label>
-                     <input type="text" class="form-control" id="phone" placeholder="Enter phone number" required>
+                     <input type="number" class="form-control" id="phone" placeholder="Enter phone number" required>
                  </div>
                  <div class="form-group">
                      <label for="dob">Date of Birth</label>
@@ -59,8 +59,8 @@
                     <input type="password" class="form-control" id="password" required placeholder="Enter The Password">
                 </div>
                 <div  class="form-group">
-                  <label for="password">Confirm The Password</label>
-                  <input type="password" class="form-control" id="password" required placeholder="Re-enter The Password">
+                  <label for="confirmPassword">Confirm The Password</label>
+                  <input type="password" class="form-control" id="confirmPassword" required placeholder="Re-enter The Password">
                 </div>
                  <div class="form-group form-check">
                      <input type="checkbox" class="form-check-input" id="terms" required>
@@ -78,6 +78,17 @@
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
  </body>
- 
+ <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+            event.preventDefault(); // Prevent form from submitting
+            alert("Passwords do not match!");
+        }
+    });
+</script>
+
  </html>
  
