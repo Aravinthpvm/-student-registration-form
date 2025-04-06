@@ -14,6 +14,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
         return;
     }
 
+
     alert(`Registration Successful! \nName: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nDate of Birth: ${dob}\nGender: ${gender}\nCourse: ${course}`);
     document.getElementById('registrationForm').reset();
 });
